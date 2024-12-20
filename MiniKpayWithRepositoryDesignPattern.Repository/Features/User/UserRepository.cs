@@ -1,6 +1,6 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
     }
 }
