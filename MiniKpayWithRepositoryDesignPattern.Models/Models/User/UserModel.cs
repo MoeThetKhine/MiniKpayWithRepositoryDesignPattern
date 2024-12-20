@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Models.Models.User;
 
+#region UserModel
+
 public class UserModel
 {
     public long UserId { get; set; }
@@ -16,3 +18,5 @@ public class UserModel
 
     public bool DeleteFlag { get; set; }
 }
+
+#endregion
