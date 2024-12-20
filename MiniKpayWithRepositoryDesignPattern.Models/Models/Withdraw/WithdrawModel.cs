@@ -1,5 +1,6 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Models.Models.Withdraw;
 
+#region WithdrawModel
 
 public class WithdrawModel
 {
@@ -11,3 +12,5 @@ public class WithdrawModel
 
     public bool DeleteFlag { get; set; }
 }
+
+#endregion
