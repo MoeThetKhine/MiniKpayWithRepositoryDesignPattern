@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
 
+#region TblTransaction
+
 public partial class TblTransaction
 {
     public long TransactionId { get; set; }
@@ -14,3 +16,5 @@ public partial class TblTransaction
 
     public bool DeleteFlag { get; set; }
 }
+
+#endregion
