@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Deposit\" />
     <Folder Include="Features\Withdraw\" />
     <Folder Include="Features\User\" />
     <Folder Include="Features\Transaction\" />
