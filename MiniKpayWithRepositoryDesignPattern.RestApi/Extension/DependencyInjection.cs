@@ -1,6 +1,4 @@
-﻿
-
-namespace MiniKpayWithRepositoryDesignPattern.RestApi.Extension;
+﻿namespace MiniKpayWithRepositoryDesignPattern.RestApi.Extension;
 
 public static class DependencyInjection
 {
