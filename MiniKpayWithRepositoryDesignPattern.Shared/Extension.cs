@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MiniKpayWithRepositoryDesignPattern.Shared
+﻿namespace MiniKpayWithRepositoryDesignPattern.Shared
 {
-    internal class Extension
+    public class Extension
     {
     }
 }
