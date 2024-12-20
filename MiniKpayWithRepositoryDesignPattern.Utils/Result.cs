@@ -80,6 +80,8 @@ public class Result<T>
 
     #endregion
 
+    #region NotFound
+
     public static Result<T> NotFound(string message = "No Data Found")
     {
         return new Result<T>
@@ -89,4 +91,6 @@ public class Result<T>
             StatusCode = EnumStatusCode.NotFound
         };
     }
+
+    #endregion
 }
