@@ -11,13 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Deposit\" />
-    <Folder Include="Controllers\Withdraw\" />
-    <Folder Include="Controllers\Transaction\" />
-    <Folder Include="Controllers\User\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MiniKpayWithRepositoryDesignPattern.Database\MiniKpayWithRepositoryDesignPattern.Database.csproj" />
     <ProjectReference Include="..\MiniKpayWithRepositoryDesignPattern.Repository\MiniKpayWithRepositoryDesignPattern.Repository.csproj" />
   </ItemGroup>
