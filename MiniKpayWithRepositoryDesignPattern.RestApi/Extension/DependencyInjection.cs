@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.RestApi.Extension;
 
+#region DependencyInjection
+
 public static class DependencyInjection
 {
 
@@ -61,3 +63,5 @@ public static class DependencyInjection
     #endregion
 
 }
+
+#endregion
