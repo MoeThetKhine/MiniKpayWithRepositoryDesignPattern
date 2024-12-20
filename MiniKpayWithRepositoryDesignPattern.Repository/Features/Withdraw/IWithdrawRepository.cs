@@ -1,6 +1,6 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Withdraw
 {
-    internal interface IWithdrawRepository
+    public interface IWithdrawRepository
     {
     }
 }
