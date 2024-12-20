@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{75046721-08AA-4ED5-AE73-35C347A23DE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKpayWithRepositoryDesignPattern.Repository", "MiniKpayWithRepositoryDesignPattern.Repository\MiniKpayWithRepositoryDesignPattern.Repository.csproj", "{2AD2C530-5090-40FE-BA00-7C4738270DEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{89A73F6B-9A1C-4F5D-8531-E9CD7203963A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKpayWithRepositoryDesignPattern.Database", "MiniKpayWithRepositoryDesignPattern.Database\MiniKpayWithRepositoryDesignPattern.Database.csproj", "{58330094-1290-42E0-9D1D-0BC2FB2F950C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKpayWithRepositoryDesignPattern.Models", "MiniKpayWithRepositoryDesignPattern.Models\MiniKpayWithRepositoryDesignPattern.Models.csproj", "{721D7339-3A61-4232-B20C-A97660B6D713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKpayWithRepositoryDesignPattern.Shared", "MiniKpayWithRepositoryDesignPattern.Shared\MiniKpayWithRepositoryDesignPattern.Shared.csproj", "{A8DF4F24-3F20-4738-8A03-3C7D4E8727E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKpayWithRepositoryDesignPattern.Utils", "MiniKpayWithRepositoryDesignPattern.Utils\MiniKpayWithRepositoryDesignPattern.Utils.csproj", "{5EA2DC36-F357-4340-B64B-EFD0F5588BD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{FAEAEF4B-D332-41BF-8E65-03B3624982D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKpayWithRepositoryDesignPattern.RestApi", "MiniKpayWithRepositoryDesignPattern.RestApi\MiniKpayWithRepositoryDesignPattern.RestApi.csproj", "{87678F59-D211-490E-887E-BBE998506433}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AD2C530-5090-40FE-BA00-7C4738270DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD2C530-5090-40FE-BA00-7C4738270DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD2C530-5090-40FE-BA00-7C4738270DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD2C530-5090-40FE-BA00-7C4738270DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58330094-1290-42E0-9D1D-0BC2FB2F950C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58330094-1290-42E0-9D1D-0BC2FB2F950C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58330094-1290-42E0-9D1D-0BC2FB2F950C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58330094-1290-42E0-9D1D-0BC2FB2F950C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721D7339-3A61-4232-B20C-A97660B6D713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721D7339-3A61-4232-B20C-A97660B6D713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721D7339-3A61-4232-B20C-A97660B6D713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721D7339-3A61-4232-B20C-A97660B6D713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DF4F24-3F20-4738-8A03-3C7D4E8727E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DF4F24-3F20-4738-8A03-3C7D4E8727E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DF4F24-3F20-4738-8A03-3C7D4E8727E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DF4F24-3F20-4738-8A03-3C7D4E8727E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA2DC36-F357-4340-B64B-EFD0F5588BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA2DC36-F357-4340-B64B-EFD0F5588BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA2DC36-F357-4340-B64B-EFD0F5588BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA2DC36-F357-4340-B64B-EFD0F5588BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87678F59-D211-490E-887E-BBE998506433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87678F59-D211-490E-887E-BBE998506433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87678F59-D211-490E-887E-BBE998506433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87678F59-D211-490E-887E-BBE998506433}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AD2C530-5090-40FE-BA00-7C4738270DEA} = {75046721-08AA-4ED5-AE73-35C347A23DE4}
+		{58330094-1290-42E0-9D1D-0BC2FB2F950C} = {89A73F6B-9A1C-4F5D-8531-E9CD7203963A}
+		{721D7339-3A61-4232-B20C-A97660B6D713} = {89A73F6B-9A1C-4F5D-8531-E9CD7203963A}
+		{A8DF4F24-3F20-4738-8A03-3C7D4E8727E4} = {89A73F6B-9A1C-4F5D-8531-E9CD7203963A}
+		{5EA2DC36-F357-4340-B64B-EFD0F5588BD0} = {89A73F6B-9A1C-4F5D-8531-E9CD7203963A}
+		{87678F59-D211-490E-887E-BBE998506433} = {FAEAEF4B-D332-41BF-8E65-03B3624982D9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {716151EE-A529-49C4-9FDB-745D27690D1C}
+	EndGlobalSection
+EndGlobal
