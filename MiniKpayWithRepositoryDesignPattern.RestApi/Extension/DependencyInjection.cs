@@ -2,6 +2,9 @@
 
 public static class DependencyInjection
 {
+
+    #region AddDependencyInjection
+
     public static IServiceCollection AddDependencyInjection(this IServiceCollection services, WebApplicationBuilder builder)
     {
         return services
@@ -9,6 +12,9 @@ public static class DependencyInjection
             .AddDataAccessService()
             .AddBusinessLogicService();
     }
+
+    #endregion
+
     private static IServiceCollection AddDbContextService(this IServiceCollection services, WebApplicationBuilder builder)
     {
         builder.Services
