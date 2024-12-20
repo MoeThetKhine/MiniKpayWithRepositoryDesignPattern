@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
 
-namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
+#region TblWithdraw
 
 public partial class TblWithdraw
 {
@@ -13,3 +12,5 @@ public partial class TblWithdraw
 
     public bool DeleteFlag { get; set; }
 }
+
+#endregion
