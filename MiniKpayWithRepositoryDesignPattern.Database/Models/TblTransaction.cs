@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
 
 public partial class TblTransaction
 {
