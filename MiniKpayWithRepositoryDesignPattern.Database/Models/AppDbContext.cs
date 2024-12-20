@@ -81,6 +81,8 @@ public partial class AppDbContext : DbContext
 
         #endregion
 
+        #region TblUser
+
         modelBuilder.Entity<TblUser>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Tbl_User__3214EC079E5C4291");
@@ -102,6 +104,8 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength();
         });
+
+        #endregion
 
         modelBuilder.Entity<TblWithdraw>(entity =>
         {
