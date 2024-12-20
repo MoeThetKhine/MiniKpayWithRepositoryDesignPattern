@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MiniKpayWithRepositoryDesignPattern.Database\MiniKpayWithRepositoryDesignPattern.Database.csproj" />
+    <ProjectReference Include="..\MiniKpayWithRepositoryDesignPattern.Models\MiniKpayWithRepositoryDesignPattern.Models.csproj" />
+    <ProjectReference Include="..\MiniKpayWithRepositoryDesignPattern.Shared\MiniKpayWithRepositoryDesignPattern.Shared.csproj" />
+    <ProjectReference Include="..\MiniKpayWithRepositoryDesignPattern.Utils\MiniKpayWithRepositoryDesignPattern.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
