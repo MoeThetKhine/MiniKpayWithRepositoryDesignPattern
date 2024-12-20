@@ -10,4 +10,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Deposit\" />
+    <Folder Include="Controllers\Withdraw\" />
+    <Folder Include="Controllers\Transaction\" />
+    <Folder Include="Controllers\User\" />
+  </ItemGroup>
+
 </Project>
