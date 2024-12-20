@@ -55,6 +55,8 @@ public partial class AppDbContext : DbContext
 
         #endregion
 
+        #region TblTransaction
+
         modelBuilder.Entity<TblTransaction>(entity =>
         {
             entity.HasKey(e => e.TransactionId).HasName("PK__Tbl_Tran__9A8D5605C85BA4DC");
@@ -76,6 +78,8 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength();
         });
+
+        #endregion
 
         modelBuilder.Entity<TblUser>(entity =>
         {
