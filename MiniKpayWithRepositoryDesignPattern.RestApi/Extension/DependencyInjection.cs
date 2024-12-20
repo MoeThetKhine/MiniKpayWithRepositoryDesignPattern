@@ -47,6 +47,8 @@ public static class DependencyInjection
 
     #endregion
 
+    #region AddBusinessLogicService
+
     private static IServiceCollection AddBusinessLogicService(this IServiceCollection services)
     {
         return services
@@ -54,7 +56,8 @@ public static class DependencyInjection
             .AddScoped<BL_User>()
             .AddScoped<BL_Withdraw>()
             .AddScoped<BL_Deposit>();
-
     }
+
+    #endregion
 
 }
