@@ -1,6 +1,4 @@
-﻿using MiniKpayWithRepositoryDesignPattern.Utils.Enums;
-
-namespace MiniKpayWithRepositoryDesignPattern.Utils;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Utils;
 
 #region Result
 
