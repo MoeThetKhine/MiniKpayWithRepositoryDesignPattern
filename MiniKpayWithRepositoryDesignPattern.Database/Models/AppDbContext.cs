@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
 
 public partial class AppDbContext : DbContext
 {
