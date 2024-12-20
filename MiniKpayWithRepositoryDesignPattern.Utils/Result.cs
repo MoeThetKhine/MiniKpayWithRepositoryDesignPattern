@@ -52,6 +52,8 @@ public class Result<T>
 
     #endregion
 
+    #region Fail
+
     public static Result<T> Fail (Exception ex)
     {
         return new Result<T>
@@ -61,6 +63,8 @@ public class Result<T>
             StatusCode = EnumStatusCode.InternalServerError
         };
     }
+
+    #endregion
 
     public static Result<T> Conflict (string message = "Data Conflict")
     {
