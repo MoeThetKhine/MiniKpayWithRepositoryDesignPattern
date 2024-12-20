@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
 
+#region TblUser
+
 public partial class TblUser
 {
     public long UserId { get; set; }
@@ -16,3 +18,5 @@ public partial class TblUser
 
     public bool DeleteFlag { get; set; }
 }
+
+#endregion
