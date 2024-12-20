@@ -37,6 +37,8 @@ public partial class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        #region TblDeposit
+
         modelBuilder.Entity<TblDeposit>(entity =>
         {
             entity.HasKey(e => e.DepositId).HasName("PK__Tbl_Depo__7C0DCEED2A3BC8DC");
@@ -50,6 +52,8 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength();
         });
+
+        #endregion
 
         modelBuilder.Entity<TblTransaction>(entity =>
         {
