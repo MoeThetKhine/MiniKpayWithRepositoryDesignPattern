@@ -1,6 +1,5 @@
-﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User
+﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
+
+public class BL_User
 {
-    public class BL_User
-    {
-    }
 }
