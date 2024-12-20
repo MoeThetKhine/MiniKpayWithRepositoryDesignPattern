@@ -34,6 +34,8 @@ public static class DependencyInjection
 
     #endregion
 
+    #region AddDataAccessService
+
     private static IServiceCollection AddDataAccessService(this IServiceCollection services)
     {
         return services
@@ -41,8 +43,9 @@ public static class DependencyInjection
         .AddScoped<IWithdrawRepository, WithdrawRepository>()
         .AddScoped<IDepositRepository, DepositRepository>()
         .AddScoped<ITransactionRepository, TransationRepository>();
-
     }
+
+    #endregion
 
     private static IServiceCollection AddBusinessLogicService(this IServiceCollection services)
     {
