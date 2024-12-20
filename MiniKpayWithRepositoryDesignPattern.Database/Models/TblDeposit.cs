@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Database.Models;
 
+#region TblDeposit
+
 public partial class TblDeposit
 {
     public long DepositId { get; set; }
@@ -10,3 +12,5 @@ public partial class TblDeposit
 
     public bool DeleteFlag { get; set; }
 }
+
+#endregion
