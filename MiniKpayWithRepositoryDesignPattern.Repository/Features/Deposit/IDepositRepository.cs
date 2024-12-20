@@ -1,6 +1,5 @@
-﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Deposit
+﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Deposit;
+
+public interface IDepositRepository
 {
-    public interface IDepositRepository
-    {
-    }
 }
