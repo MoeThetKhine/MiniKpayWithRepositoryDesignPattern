@@ -107,6 +107,8 @@ public partial class AppDbContext : DbContext
 
         #endregion
 
+        #region TblWithdraw
+
         modelBuilder.Entity<TblWithdraw>(entity =>
         {
             entity.HasKey(e => e.WithdrawId).HasName("PK__Tbl_With__206211CA1AF92F06");
@@ -120,6 +122,8 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength();
         });
+
+        #endregion
 
         OnModelCreatingPartial(modelBuilder);
     }
