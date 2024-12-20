@@ -6,10 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Withdraw\" />
-    <Folder Include="Features\User\" />
-    <Folder Include="Features\Transaction\" />
-  </ItemGroup>
-
 </Project>
