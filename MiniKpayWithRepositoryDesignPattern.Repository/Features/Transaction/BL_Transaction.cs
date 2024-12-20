@@ -1,6 +1,5 @@
-﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Transaction
+﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Transaction;
+
+public class BL_Transaction
 {
-    public class BL_Transaction
-    {
-    }
 }
