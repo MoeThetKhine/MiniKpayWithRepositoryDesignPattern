@@ -41,6 +41,8 @@ public class UserRepository : IUserRepository
 
     #endregion
 
+    #region GetUserAsync
+
     public async Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
     {
         Result<List<UserModel>> result;
@@ -68,6 +70,8 @@ public class UserRepository : IUserRepository
         }
         return result;
     }
+
+    #endregion
 
     public async Task<Result<UserLogInModel>> LogInUserAsync(UserLogInModel logInModel, CancellationToken cs)
     {
