@@ -128,6 +128,8 @@ public class BL_User
 
     #endregion
 
+    #region LogInUserAsync
+
     public async Task<Result<UserLogInModel>> LogInUserAsync(UserLogInModel logInModel, CancellationToken cs)
     {
         Result<UserLogInModel> response;
@@ -143,4 +145,7 @@ public class BL_User
     result:
         return response;
     }
+
+    #endregion
+
 }
