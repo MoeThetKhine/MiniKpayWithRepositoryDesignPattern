@@ -137,6 +137,8 @@ public class UserRepository : IUserRepository
 
     #endregion
 
+    #region UpdateUserProfileAsync
+
     public async Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs)
     {
         Result<UserResponseModel> result;
@@ -180,4 +182,6 @@ public class UserRepository : IUserRepository
         }
         return result;
     }
+
+    #endregion
 }
