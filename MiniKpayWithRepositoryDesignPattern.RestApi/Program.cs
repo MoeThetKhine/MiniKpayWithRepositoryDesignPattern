@@ -1,5 +1,3 @@
-using MiniKpayWithRepositoryDesignPattern.RestApi.Extension;
-
 var builder = WebApplication.CreateBuilder(args);
 
 

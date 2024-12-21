@@ -4,3 +4,4 @@ global using MiniKpayWithRepositoryDesignPattern.Repository.Features.Deposit;
 global using MiniKpayWithRepositoryDesignPattern.Repository.Features.Transaction;
 global using MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
 global using MiniKpayWithRepositoryDesignPattern.Repository.Features.Withdraw;
+global using MiniKpayWithRepositoryDesignPattern.RestApi.Extension;
