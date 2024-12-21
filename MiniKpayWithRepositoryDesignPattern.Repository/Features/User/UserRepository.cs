@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MiniKpayWithRepositoryDesignPattern.Database.Models;
-using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
-using MiniKpayWithRepositoryDesignPattern.Shared;
-using MiniKpayWithRepositoryDesignPattern.Utils;
-
-namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
 
 public class UserRepository : IUserRepository
 {
