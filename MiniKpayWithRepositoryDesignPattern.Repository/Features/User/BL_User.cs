@@ -107,7 +107,23 @@ public class BL_User
         {
             response = Result<UserModel>.Fail(ex);
         }
-        result:
+    result:
+        return response;
+    }
+
+    public async Task<Result<UserLogInModel>> LogInUserAsync(UserLogInModel logInModel, CancellationToken cs)
+    {
+        Result<UserLogInModel> response;
+        try
+        {
+            response = await _userRepository.LogInUserAsync(logInModel, cs);
+        }
+        catch(Exception ex)
+        {
+            response = Result<UserLogInModel>.Fail(ex);
+
+        }
+    result:
         return response;
     }
 }
