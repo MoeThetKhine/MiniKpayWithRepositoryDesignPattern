@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
 
+#region UserRequestModel
+
 public class UserRequestModel
 {
     public string FullName { get; set; } = null!;
@@ -13,3 +15,5 @@ public class UserRequestModel
     public decimal Balance { get; set; }
 
 }
+
+#endregion
