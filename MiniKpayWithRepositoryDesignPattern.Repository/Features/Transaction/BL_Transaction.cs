@@ -36,6 +36,8 @@ public class BL_Transaction
 
         try
         {
+            #region Validation
+
             if (request.Amount is null || request.Amount <= 0)
             {
                 response = Result<TransactionRequestModel>.Fail("Transaction amount must be greater than 0.");
@@ -61,6 +63,11 @@ public class BL_Transaction
             {
                 response = Result<TransactionRequestModel>.Fail("Insufficient balance.");
             }
+
+            #endregion
+
+
+
             sender.Balance -= request.Amount.Value;
             receiver.Balance += request.Amount.Value;
 
