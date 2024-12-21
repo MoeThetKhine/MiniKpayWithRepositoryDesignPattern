@@ -8,6 +8,9 @@ public class BL_User
     {
         _userRepository = userRepository;
     }
+
+    #region GetUserAsync
+
     public async Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
     {
         Result<List<UserModel>> response;
@@ -22,6 +25,9 @@ public class BL_User
     result:
         return response;
     }
+
+    #endregion
+
 
     public async Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
     {
