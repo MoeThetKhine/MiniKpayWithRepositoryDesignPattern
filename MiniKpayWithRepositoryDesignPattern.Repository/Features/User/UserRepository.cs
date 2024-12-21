@@ -9,6 +9,8 @@ public class UserRepository : IUserRepository
         _db = db;
     }
 
+    #region CreateUserAsync
+
     public async Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
     {
         Result<UserRequestModel> result;
@@ -35,8 +37,9 @@ public class UserRepository : IUserRepository
             result = Result<UserRequestModel>.Fail(ex.Message);
         }
         return result; 
-
     }
+
+    #endregion
 
     public async Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
     {
