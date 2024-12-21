@@ -9,6 +9,8 @@ public class TransationRepository : ITransactionRepository
         _appDbContext = appDbContext;
     }
 
+    #region GetTransactionAsync
+
     public async Task<Result<List<TransationModel>>> GetTransactionAsync(CancellationToken cs)
     {
         Result<List<TransationModel>> result;
@@ -34,6 +36,8 @@ public class TransationRepository : ITransactionRepository
         }
         return result;
     }
+
+    #endregion
 
     public async Task<Result<TransactionRequestModel>> CreateTransactionAsync(TransactionRequestModel request, CancellationToken cs)
     {
