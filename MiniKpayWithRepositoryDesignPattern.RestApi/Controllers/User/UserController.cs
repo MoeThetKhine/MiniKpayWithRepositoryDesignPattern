@@ -55,10 +55,14 @@ public class UserController : ControllerBase
 
     #endregion
 
+    #region LogInUserAsync
+
     [HttpPut]
     public async Task<IActionResult> LogInUserAsync(UserLogInModel userLogInModel, CancellationToken cs)
     {
         var result = await _user.LogInUserAsync(userLogInModel, cs);
         return Ok(result);
     }
+
+    #endregion
 }
