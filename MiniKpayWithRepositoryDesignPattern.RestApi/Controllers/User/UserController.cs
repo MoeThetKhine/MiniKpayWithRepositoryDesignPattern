@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
-
-namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.User
+﻿namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.User
 {
     [Route("api/[controller]")]
     [ApiController]
