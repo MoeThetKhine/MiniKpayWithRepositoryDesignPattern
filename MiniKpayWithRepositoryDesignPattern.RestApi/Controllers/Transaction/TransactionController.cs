@@ -22,10 +22,14 @@ public class TransactionController : ControllerBase
 
     #endregion
 
+    #region GetTransactionAsync
+
     [HttpGet]
     public async Task<IActionResult>GetTransactionAsync(CancellationToken cs)
     {
         var transaction = await _bL_Transaction.GetTransactionAsync(cs);
         return Ok(transaction);
     }
+
+    #endregion
 }
