@@ -4,6 +4,37 @@ public class TransationRepository : ITransactionRepository
 {
     private readonly AppDbContext _appDbContext;
 
+    public TransationRepository(AppDbContext appDbContext)
+    {
+        _appDbContext = appDbContext;
+    }
+
+    public async Task<Result<List<TransationModel>>> GetTransactionAsync(CancellationToken cs)
+    {
+        Result<List<TransationModel>> result;
+
+        try
+        {
+            var query = _appDbContext.TblTransactions
+                .Where(x => x.DeleteFlag == false).AsNoTracking();
+
+            var lst = await query.Select(x => new TransationModel()
+            {
+                FromPhoneNumber = x.FromPhoneNumber,
+                ToPhoneNumber = x.ToPhoneNumber,
+                Amount = x.Amount,
+                Pin = x.Pin,
+            }).ToListAsync();
+
+            result = Result<List<TransationModel>>.Success(lst);
+        }
+        catch (Exception ex)
+        {
+            result = Result<List<TransationModel>>.Fail(ex.Message);
+        }
+        return result;
+    }
+
     public async Task<Result<TransactionRequestModel>> CreateTransactionAsync(TransactionRequestModel request, CancellationToken cs)
     {
         Result<TransactionRequestModel> result;
@@ -32,29 +63,5 @@ public class TransationRepository : ITransactionRepository
         return result;
     }
 
-    public async Task<Result<List<TransationModel>>> GetTransactionAsync(CancellationToken cs)
-    {
-        Result<List<TransationModel>> result;
-
-        try
-        {
-            var query =  _appDbContext.TblTransactions
-                .Where(x=> x.DeleteFlag == false).AsNoTracking();
-
-            var lst = await query.Select(x => new TransationModel()
-            {
-                FromPhoneNumber = x.FromPhoneNumber,
-                ToPhoneNumber = x.ToPhoneNumber,
-                Amount = x.Amount,
-                Pin = x.Pin,
-            }).ToListAsync();
-
-            result = Result<List<TransationModel>>.Success(lst);
-        }
-        catch (Exception ex)
-        {
-            result = Result<List<TransationModel>>.Fail(ex.Message);
-        }
-        return result;
-    }
+    
 }
