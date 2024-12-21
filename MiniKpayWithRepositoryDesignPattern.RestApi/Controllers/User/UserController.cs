@@ -33,12 +33,17 @@ public class UserController : ControllerBase
 
     #endregion
 
+    #region UpdateUserProfileAsync
+
     [HttpPatch]
     public async Task<IActionResult>UpdateUserProfileAsync(string phono, UserResponseModel responseModel,CancellationToken cs)
     {
         var result = await _user.UpdateUserProfileAsync(phono, responseModel, cs);
         return Ok(result);
     }
+
+    #endregion
+
     [HttpDelete]
     public async Task<IActionResult> LogOutUserAsync(string phno, CancellationToken cs)
     {
