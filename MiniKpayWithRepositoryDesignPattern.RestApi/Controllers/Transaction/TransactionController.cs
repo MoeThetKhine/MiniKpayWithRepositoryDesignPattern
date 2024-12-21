@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
+﻿using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
 
 namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.Transaction
 {
