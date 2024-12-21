@@ -22,12 +22,16 @@ public class UserController : ControllerBase
 
     #endregion
 
+    #region CreateUserAsync
+
     [HttpPost]
     public async Task<IActionResult>CreateUserAsync([FromForm]UserRequestModel userRequestModel, CancellationToken cs)
     {
         var result = await _user.CreateUserAsync(userRequestModel, cs);
         return Ok(result);
     }
+
+    #endregion
 
     [HttpPatch]
     public async Task<IActionResult>UpdateUserProfileAsync(string phono, UserResponseModel responseModel,CancellationToken cs)
