@@ -105,6 +105,8 @@ public class UserRepository : IUserRepository
 
     #endregion
 
+    #region LogOutUserAsync
+
     public async Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs)
     {
         Result<UserModel> result;
@@ -132,6 +134,8 @@ public class UserRepository : IUserRepository
         }
         return result;
     }
+
+    #endregion
 
     public async Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs)
     {
