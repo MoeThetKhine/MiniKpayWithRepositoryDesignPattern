@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
 
+#region UserResponseModel
+
 public class UserResponseModel
 {
     public string FullName { get; set; } = null!;
@@ -10,3 +12,5 @@ public class UserResponseModel
 
     public string PhoneNumber { get; set; } = null!;
 }
+
+#endregion
