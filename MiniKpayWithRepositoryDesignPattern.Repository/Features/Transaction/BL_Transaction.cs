@@ -66,7 +66,7 @@ public class BL_Transaction
 
             #endregion
 
-
+            #region Update Balance in User Table
 
             sender.Balance -= request.Amount.Value;
             receiver.Balance += request.Amount.Value;
@@ -76,6 +76,7 @@ public class BL_Transaction
 
             await _appDbContext.SaveChangesAsync();
 
+            #endregion
 
             response = await _transactionRepository.CreateTransactionAsync(request, cs);
 
