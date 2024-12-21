@@ -15,9 +15,38 @@ public class UserRepository : IUserRepository
         _db = db;
     }
 
-    public async Task<Result<IEnumerable<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
+    public async Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
     {
-        Result<IEnumerable<UserModel>> result;
+        Result<UserRequestModel> result;
+
+        try
+        {
+            var user =  new TblUser
+            {
+                FullName = userRequestModel.FullName,
+                Password = userRequestModel.Password,
+                Pin = userRequestModel.Pin,
+                PhoneNumber = userRequestModel.PhoneNumber,
+                Balance = userRequestModel.Balance,
+            };
+
+            _db.TblUsers.Add(user);
+            await _db.SaveChangesAsync(cs);
+
+            result = Result<UserRequestModel>.Success();
+
+        }
+        catch (Exception ex)
+        {
+            result = Result<UserRequestModel>.Fail(ex.Message);
+        }
+        return result; 
+
+    }
+
+    public async Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
+    {
+        Result<List<UserModel>> result;
 
         try
         {
@@ -34,13 +63,13 @@ public class UserRepository : IUserRepository
                 Balance = x.Balance
             }).ToListAsync();
 
-            result = Result<IEnumerable<UserModel>>.Success();
+            result = Result<List<UserModel>>.Success(lst);
         }
         catch (Exception ex)
         {
-            result = Result<IEnumerable<UserModel>>.Fail(ex.Message);
+            result = Result<List<UserModel>>.Fail(ex.Message);
         }
         return result;
-
     }
+
 }
