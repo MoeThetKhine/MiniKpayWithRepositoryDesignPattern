@@ -1,6 +1,4 @@
-﻿using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
-
-namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.Transaction;
+﻿namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.Transaction;
 
 [Route("api/[controller]")]
 [ApiController]

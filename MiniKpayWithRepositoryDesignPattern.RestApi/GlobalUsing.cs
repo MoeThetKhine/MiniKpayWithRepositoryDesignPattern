@@ -7,3 +7,4 @@ global using MiniKpayWithRepositoryDesignPattern.Repository.Features.Withdraw;
 global using MiniKpayWithRepositoryDesignPattern.RestApi.Extension;
 global using Microsoft.AspNetCore.Mvc;
 global using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
+global using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
