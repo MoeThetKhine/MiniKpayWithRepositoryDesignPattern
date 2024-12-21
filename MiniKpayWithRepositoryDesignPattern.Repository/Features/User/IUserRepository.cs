@@ -7,4 +7,5 @@ public interface IUserRepository
 {
     Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs);
     Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs);
+    Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs);
 }
