@@ -5,5 +5,6 @@ namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
 
 public interface IUserRepository
 {
-    Task<Result<IEnumerable<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs);
+    Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs);
+    Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs);
 }
