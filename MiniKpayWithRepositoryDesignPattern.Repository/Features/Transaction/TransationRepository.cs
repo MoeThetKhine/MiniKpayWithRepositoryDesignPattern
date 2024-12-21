@@ -1,4 +1,5 @@
-﻿using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
+﻿using Azure;
+using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
 
 namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Transaction;
 
@@ -12,7 +13,6 @@ public class TransationRepository : ITransactionRepository
 
         try
         {
-            
             var transaction = new TblTransaction
             {
                 FromPhoneNumber = request.FromPhoneNumber,
@@ -31,6 +31,32 @@ public class TransationRepository : ITransactionRepository
         catch (Exception ex)
         {
             result = Result<TransactionRequestModel>.Fail(ex.Message);
+        }
+        return result;
+    }
+
+    public async Task<Result<List<TransationModel>>> GetTransactionAsync(CancellationToken cs)
+    {
+        Result<List<TransationModel>> result;
+
+        try
+        {
+            var query =  _appDbContext.TblTransactions
+                .Where(x=> x.DeleteFlag == false).AsNoTracking();
+
+            var lst = await query.Select(x => new TransationModel()
+            {
+                FromPhoneNumber = x.FromPhoneNumber,
+                ToPhoneNumber = x.ToPhoneNumber,
+                Amount = x.Amount,
+                Pin = x.Pin,
+            }).ToListAsync();
+
+            result = Result<List<TransationModel>>.Success(lst);
+        }
+        catch (Exception ex)
+        {
+            result = Result<List<TransationModel>>.Fail(ex.Message);
         }
         return result;
     }
