@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
 
 namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.User
 {
@@ -17,7 +18,14 @@ namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.User
         [HttpGet]
         public async Task<IActionResult> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
         {
-            var result = _user.GetUserAsync(pageNo, pageSize, cs);
+            var result = await _user.GetUserAsync(pageNo, pageSize, cs);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult>CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
+        {
+            var result = await _user.CreateUserAsync(userRequestModel, cs);
             return Ok(result);
         }
     }
