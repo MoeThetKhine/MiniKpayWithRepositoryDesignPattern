@@ -1,8 +1,4 @@
-﻿using MiniKpayWithRepositoryDesignPattern.Database.Models;
-using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
-using MiniKpayWithRepositoryDesignPattern.Utils;
-
-namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Transaction;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.Transaction;
 
 public class BL_Transaction
 {
