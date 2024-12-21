@@ -1,1 +1,2 @@
-﻿
+﻿global using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
+global using MiniKpayWithRepositoryDesignPattern.Utils;

@@ -1,7 +1,4 @@
-﻿using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
-using MiniKpayWithRepositoryDesignPattern.Utils;
-
-namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
+﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
 
 public interface IUserRepository
 {
