@@ -72,4 +72,47 @@ public class UserRepository : IUserRepository
         return result;
     }
 
+    public async Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs)
+    {
+        Result<UserResponseModel> result;
+
+        try
+        {
+            var user = await _db.TblUsers.AsNoTracking().FirstOrDefaultAsync(x => x.PhoneNumber == phno);
+
+            if(user is null)
+            {
+                result = Result<UserResponseModel>.NotFound("User does not exist.");
+            }
+
+            if(!string.IsNullOrEmpty(responseModel.FullName))
+            {
+               user.FullName = responseModel.FullName;
+            }
+            if(!string.IsNullOrEmpty(responseModel.Password))
+            {
+                user.Password = responseModel.Password;
+            }
+            if(!string.IsNullOrEmpty(responseModel.Pin))
+            {
+                user.Pin = responseModel.Pin;
+            }
+
+            if (!string.IsNullOrEmpty(responseModel.PhoneNumber))
+            {
+                user.PhoneNumber = responseModel.PhoneNumber;
+            }
+
+            _db.TblUsers.Attach(user);
+            _db.Entry(user).State = EntityState.Modified;
+
+            await _db.SaveChangesAsync(cs);
+            result = Result<UserResponseModel>.Success();
+        }
+        catch(Exception ex)
+        {
+            result = Result<UserResponseModel>.Fail(ex.Message);
+        }
+        return result;
+    }
 }
