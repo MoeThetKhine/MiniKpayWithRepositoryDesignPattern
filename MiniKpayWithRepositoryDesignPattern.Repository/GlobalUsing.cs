@@ -5,3 +5,4 @@ global using MiniKpayWithRepositoryDesignPattern.Database.Models;
 global using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
 global using MiniKpayWithRepositoryDesignPattern.Shared;
 global using MiniKpayWithRepositoryDesignPattern.Utils;
+global using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
