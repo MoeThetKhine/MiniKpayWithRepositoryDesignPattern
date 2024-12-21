@@ -23,9 +23,16 @@ namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.User
         }
 
         [HttpPost]
-        public async Task<IActionResult>CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
+        public async Task<IActionResult>CreateUserAsync([FromForm]UserRequestModel userRequestModel, CancellationToken cs)
         {
             var result = await _user.CreateUserAsync(userRequestModel, cs);
+            return Ok(result);
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult>UpdateUserProfileAsync(string phono, UserResponseModel responseModel,CancellationToken cs)
+        {
+            var result = await _user.UpdateUserProfileAsync(phono, responseModel, cs);
             return Ok(result);
         }
     }
