@@ -88,6 +88,10 @@ public class BL_User
         return response;
     }
 
+    #endregion
+
+    #region UpdateUserProfileAsync
+
     public async Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs)
     {
         Result<UserResponseModel> response;
@@ -102,6 +106,8 @@ public class BL_User
     result:
         return response;
     }
+
+    #endregion
 
     public async Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs)
     {
