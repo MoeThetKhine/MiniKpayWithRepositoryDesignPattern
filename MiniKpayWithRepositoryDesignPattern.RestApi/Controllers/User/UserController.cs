@@ -11,12 +11,16 @@ public class UserController : ControllerBase
         _user = user;
     }
 
+    #region GetUserAsync
+
     [HttpGet]
     public async Task<IActionResult> GetUserAsync(int pageNo, int pageSize, CancellationToken cs)
     {
         var result = await _user.GetUserAsync(pageNo, pageSize, cs);
         return Ok(result);
     }
+
+    #endregion
 
     [HttpPost]
     public async Task<IActionResult>CreateUserAsync([FromForm]UserRequestModel userRequestModel, CancellationToken cs)
