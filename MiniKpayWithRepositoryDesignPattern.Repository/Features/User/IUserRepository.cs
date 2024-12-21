@@ -9,4 +9,7 @@ public interface IUserRepository
     Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs);
     Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs);
     Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs);
+    Task<Result<UserLogInModel>> LogInUserAsync( UserLogInModel logInModel , CancellationToken cs);
+
+
 }
