@@ -41,5 +41,11 @@ namespace MiniKpayWithRepositoryDesignPattern.RestApi.Controllers.User
             var result = await _user.LogOutUserAsync(phno, cs);
             return Ok(result);
         }
+        [HttpPut]
+        public async Task<IActionResult> LogInUserAsync(UserLogInModel userLogInModel, CancellationToken cs)
+        {
+            var result = await _user.LogInUserAsync(userLogInModel, cs);
+            return Ok(result);
+        }
     }
 }
