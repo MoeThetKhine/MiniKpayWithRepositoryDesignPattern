@@ -11,6 +11,25 @@ public class BL_Transaction
         _transactionRepository = transactionRepository;
     }
 
+    #region GetTransactionAsync
+
+    public async Task<Result<List<TransationModel>>> GetTransactionAsync(CancellationToken cs)
+    {
+        Result<List<TransationModel>> response;
+        try
+        {
+            response = await _transactionRepository.GetTransactionAsync(cs);
+        }
+        catch (Exception ex)
+        {
+            response = Result<List<TransationModel>>.Fail(ex);
+        }
+    result:
+        return response;
+    }
+
+    #endregion
+
     public async Task<Result<TransactionRequestModel>> CreateTransactionAsync(TransactionRequestModel request, CancellationToken cs)
     {
         Result<TransactionRequestModel> response;
@@ -62,19 +81,5 @@ public class BL_Transaction
         return response;
     }
 
-    public async Task<Result<List<TransationModel>>> GetTransactionAsync(CancellationToken cs)
-    {
-        Result<List<TransationModel>> response;
-        try
-        {
-            response = await _transactionRepository.GetTransactionAsync(cs);
-        }
-        catch (Exception ex)
-        {
-            response = Result<List<TransationModel>>.Fail(ex);
-        }
-    result:
-        return response;
-
-    }
+    
 }
