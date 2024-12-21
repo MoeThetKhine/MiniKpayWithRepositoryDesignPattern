@@ -73,6 +73,8 @@ public class UserRepository : IUserRepository
 
     #endregion
 
+    #region LogInUserAsync
+
     public async Task<Result<UserLogInModel>> LogInUserAsync(UserLogInModel logInModel, CancellationToken cs)
     {
         Result<UserLogInModel> result;
@@ -100,6 +102,8 @@ public class UserRepository : IUserRepository
         }
         return result;
     }
+
+    #endregion
 
     public async Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs)
     {
