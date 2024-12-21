@@ -1,4 +1,5 @@
-﻿using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
+﻿using Azure;
+using MiniKpayWithRepositoryDesignPattern.Models.KpayModel.User;
 using MiniKpayWithRepositoryDesignPattern.Utils;
 
 namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
@@ -20,18 +21,18 @@ public class BL_User
         }
         catch (Exception ex)
         {
-            response =  Result<List<UserModel>>.Fail(ex);
+            response = Result<List<UserModel>>.Fail(ex);
         }
-        result: 
+    result:
         return response;
     }
 
-    public async Task<Result<UserRequestModel>>CreateUserAsync(UserRequestModel userRequestModel,CancellationToken cs)
+    public async Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
     {
         Result<UserRequestModel> response;
         try
         {
-            if(userRequestModel.FullName is null)
+            if (userRequestModel.FullName is null)
             {
                 response = Result<UserRequestModel>.Fail("User Name is required");
             }
@@ -39,32 +40,32 @@ public class BL_User
             {
                 response = Result<UserRequestModel>.Fail("Password is required");
             }
-            if(userRequestModel.Password!.Length < 8 || userRequestModel.Password.Length > 16)
+            if (userRequestModel.Password!.Length < 8 || userRequestModel.Password.Length > 16)
             {
                 response = Result<UserRequestModel>.Fail("Password must be between 8 and 16 character");
             }
 
-            if(userRequestModel.Pin is null)
+            if (userRequestModel.Pin is null)
             {
                 response = Result<UserRequestModel>.Fail("Pin is required");
             }
 
-            if(userRequestModel.Pin!.Length != 4)
+            if (userRequestModel.Pin!.Length != 4)
             {
                 response = Result<UserRequestModel>.Fail("Pin Code must be 4 numbers");
             }
 
-            if(userRequestModel.PhoneNumber is null)
+            if (userRequestModel.PhoneNumber is null)
             {
                 response = Result<UserRequestModel>.Fail("Phone Number is required");
             }
 
-            if(userRequestModel.PhoneNumber!.Length != 11)
+            if (userRequestModel.PhoneNumber!.Length != 11)
             {
                 response = Result<UserRequestModel>.Fail("Phone Number must be 11 numbers");
             }
 
-            if(userRequestModel.Balance < 10000)
+            if (userRequestModel.Balance < 10000)
             {
                 response = Result<UserRequestModel>.Fail("Your Balance must be atleast 10000 KS");
             }
@@ -72,9 +73,24 @@ public class BL_User
             response = await _userRepository.CreateUserAsync(userRequestModel, cs);
 
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             response = Result<UserRequestModel>.Fail(ex);
+        }
+    result:
+        return response;
+    }
+
+    public async Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs)
+    {
+        Result<UserResponseModel> response;
+        try
+        {
+            response = await _userRepository.UpdateUserProfileAsync(phno, responseModel, cs);
+        }
+        catch (Exception ex)
+        {
+            response = Result<UserResponseModel>.Fail(ex);
         }
     result:
         return response;
