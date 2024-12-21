@@ -44,12 +44,17 @@ public class UserController : ControllerBase
 
     #endregion
 
+    #region LogOutUserAsync
+
     [HttpDelete]
     public async Task<IActionResult> LogOutUserAsync(string phno, CancellationToken cs)
     {
         var result = await _user.LogOutUserAsync(phno, cs);
         return Ok(result);
     }
+
+    #endregion
+
     [HttpPut]
     public async Task<IActionResult> LogInUserAsync(UserLogInModel userLogInModel, CancellationToken cs)
     {
