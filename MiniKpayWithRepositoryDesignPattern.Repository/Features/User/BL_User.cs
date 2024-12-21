@@ -95,4 +95,19 @@ public class BL_User
     result:
         return response;
     }
+
+    public async Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs)
+    {
+        Result<UserModel> response;
+        try
+        {
+            response = await _userRepository.LogOutUserAsync(phno, cs);
+        }
+        catch (Exception ex)
+        {
+            response = Result<UserModel>.Fail(ex);
+        }
+        result:
+        return response;
+    }
 }
