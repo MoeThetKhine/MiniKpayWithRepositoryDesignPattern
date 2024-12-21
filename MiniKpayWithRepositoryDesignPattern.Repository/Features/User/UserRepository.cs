@@ -72,6 +72,34 @@ public class UserRepository : IUserRepository
         return result;
     }
 
+    public async Task<Result<UserLogInModel>> LogInUserAsync(UserLogInModel logInModel, CancellationToken cs)
+    {
+        Result<UserLogInModel> result;
+        try
+        {
+            var user = await _db.TblUsers
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.FullName == logInModel.FullName && x.Password == logInModel.Password && x.DeleteFlag,cs);
+
+            if(user is null)
+            {
+                result = Result<UserLogInModel>.NotFound("User does not exist");
+            }
+            user.DeleteFlag = false;
+
+            _db.Entry(user).State = EntityState.Modified;
+
+            await _db.SaveChangesAsync(cs);
+            result = Result<UserLogInModel>.Success("Log In Successful.");
+
+        }
+        catch(Exception ex)
+        {
+            result = Result<UserLogInModel>.Fail(ex.Message);
+        }
+        return result;
+    }
+
     public async Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs)
     {
         Result<UserModel> result;
