@@ -30,6 +30,8 @@ public class BL_Transaction
 
     #endregion
 
+    #region CreateTransactionAsync
+
     public async Task<Result<TransactionRequestModel>> CreateTransactionAsync(TransactionRequestModel request, CancellationToken cs)
     {
         Result<TransactionRequestModel> response;
@@ -89,5 +91,6 @@ public class BL_Transaction
         return response;
     }
 
-    
+    #endregion
+
 }
