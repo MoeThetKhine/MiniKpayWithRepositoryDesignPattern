@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Repository.Features.User;
 
+#region IUserRepository
+
 public interface IUserRepository
 {
     Task<Result<List<UserModel>>> GetUserAsync(int pageNo, int pageSize, CancellationToken cs);
@@ -7,6 +9,6 @@ public interface IUserRepository
     Task<Result<UserResponseModel>> UpdateUserProfileAsync(string phno, UserResponseModel responseModel, CancellationToken cs);
     Task<Result<UserModel>> LogOutUserAsync(string phno, CancellationToken cs);
     Task<Result<UserLogInModel>> LogInUserAsync( UserLogInModel logInModel , CancellationToken cs);
-
-
 }
+
+#endregion
