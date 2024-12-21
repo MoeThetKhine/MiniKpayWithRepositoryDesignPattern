@@ -1,5 +1,7 @@
 ﻿namespace MiniKpayWithRepositoryDesignPattern.Models.KpayModel.Transaction;
 
+#region TransactionRequestModel
+
 public class TransactionRequestModel
 {
 
@@ -11,3 +13,5 @@ public class TransactionRequestModel
 
     public string Pin { get; set; } = null!;
 }
+
+#endregion
