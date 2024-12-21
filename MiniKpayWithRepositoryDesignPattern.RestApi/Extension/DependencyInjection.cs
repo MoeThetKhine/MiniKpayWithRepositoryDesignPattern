@@ -25,13 +25,17 @@ public static class DependencyInjection
          .AddDbContext<AppDbContext>(opt =>
          {
              opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-         })
+         },
+            ServiceLifetime.Transient, ServiceLifetime.Transient)
+    
          .AddControllers().AddJsonOptions(opt =>
          {
              opt.JsonSerializerOptions.PropertyNamingPolicy = null;
          });
 
         return services;
+
+       
     }
 
     #endregion
@@ -54,10 +58,12 @@ public static class DependencyInjection
     private static IServiceCollection AddBusinessLogicService(this IServiceCollection services)
     {
         return services
-            .AddScoped<BL_Transaction>()
             .AddScoped<BL_User>()
             .AddScoped<BL_Withdraw>()
-            .AddScoped<BL_Deposit>();
+            .AddScoped<BL_Deposit>()
+            .AddScoped<BL_Transaction>();
+            
+            
     }
 
     #endregion
