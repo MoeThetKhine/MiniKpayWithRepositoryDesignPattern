@@ -28,12 +28,15 @@ public class BL_User
 
     #endregion
 
+    #region CreateUserAsync
 
     public async Task<Result<UserRequestModel>> CreateUserAsync(UserRequestModel userRequestModel, CancellationToken cs)
     {
         Result<UserRequestModel> response;
         try
         {
+            #region Validation
+
             if (userRequestModel.FullName is null)
             {
                 response = Result<UserRequestModel>.Fail("User Name is required");
@@ -71,6 +74,8 @@ public class BL_User
             {
                 response = Result<UserRequestModel>.Fail("Your Balance must be atleast 10000 KS");
             }
+
+            #endregion
 
             response = await _userRepository.CreateUserAsync(userRequestModel, cs);
 
