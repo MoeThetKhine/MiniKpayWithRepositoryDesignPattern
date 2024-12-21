@@ -39,6 +39,8 @@ public class TransationRepository : ITransactionRepository
 
     #endregion
 
+    #region CreateTransactionAsync
+
     public async Task<Result<TransactionRequestModel>> CreateTransactionAsync(TransactionRequestModel request, CancellationToken cs)
     {
         Result<TransactionRequestModel> result;
@@ -57,8 +59,6 @@ public class TransationRepository : ITransactionRepository
             await _appDbContext.SaveChangesAsync();
 
             result = Result<TransactionRequestModel>.Success(request);
-            
-
         }
         catch (Exception ex)
         {
@@ -67,5 +67,6 @@ public class TransationRepository : ITransactionRepository
         return result;
     }
 
-    
+    #endregion
+
 }
